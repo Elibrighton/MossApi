@@ -20,55 +20,55 @@ namespace MossApi.Controllers
         public ActionResult<List<Company>> Get() =>
             _companyService.Get();
 
-        //[HttpGet("{id:length(24)}", Name = "GetCompany")]
-        //public ActionResult<Company> Get(string id)
-        //{
-        //    var company = _companyService.Get(id);
+        [HttpGet("{id:length(24)}", Name = "GetCompany")]
+        public ActionResult<Company> Get(string id)
+        {
+            var company = _companyService.Get(id);
 
-        //    if (company == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (company == null)
+            {
+                return NotFound();
+            }
 
-        //    return company;
-        //}
+            return company;
+        }
 
-        //[HttpPost]
-        //public ActionResult<Company> Create(Company company)
-        //{
-        //    _companyService.Create(company);
+        [HttpPost]
+        public ActionResult<Company> Create(Company company)
+        {
+            _companyService.Create(company);
 
-        //    return CreatedAtRoute("GetCompany", new { id = company.Id.ToString() }, company);
-        //}
+            return CreatedAtRoute("GetCompany", new { id = company.Id.ToString() }, company);
+        }
 
-        //[HttpPut("{id:length(24)}")]
-        //public IActionResult Update(string id, Company companyIn)
-        //{
-        //    var company = _companyService.Get(id);
+        [HttpPut("{id:length(24)}")]
+        public IActionResult Update(string id, Company companyIn)
+        {
+            var company = _companyService.Get(id);
 
-        //    if (company == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (company == null)
+            {
+                return NotFound();
+            }
 
-        //    _companyService.Update(id, companyIn);
+            _companyService.Update(id, companyIn);
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
-        //[HttpDelete("{id:length(24)}")]
-        //public IActionResult Delete(string id)
-        //{
-        //    var company = _companyService.Get(id);
+        [HttpDelete("{id:length(24)}")]
+        public IActionResult Delete(string id)
+        {
+            var company = _companyService.Get(id);
 
-        //    if (company == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (company == null)
+            {
+                return NotFound();
+            }
 
-        //    _companyService.Remove(company.Id);
+            _companyService.Remove(company.Id);
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
     }
 }

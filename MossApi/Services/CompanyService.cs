@@ -22,22 +22,22 @@ namespace MossApi.Services
         public List<Company> Get() =>
             _companies.Find(company => true).ToList();
 
-        //public Company Get(string id) =>
-        //    _companies.Find<Company>(company => company.Id == id).FirstOrDefault();
+        public Company Get(string id) =>
+            _companies.Find<Company>(company => company.Id == id).FirstOrDefault();
 
-        //public Company Create(Company company)
-        //{
-        //    _companies.InsertOne(company);
-        //    return company;
-        //}
+        public Company Create(Company company)
+        {
+            _companies.InsertOne(company);
+            return company;
+        }
 
-        //public void Update(string id, Company companyIn) =>
-        //    _companies.ReplaceOne(company => company.Id == id, companyIn);
+        public void Update(string id, Company companyIn) =>
+            _companies.ReplaceOne(company => company.Id == id, companyIn);
 
-        //public void Remove(Company companyIn) =>
-        //    _companies.DeleteOne(company => company.Id == companyIn.Id);
+        public void Remove(Company companyIn) =>
+            _companies.DeleteOne(company => company.Id == companyIn.Id);
 
-        //public void Remove(string id) =>
-        //    _companies.DeleteOne(company => company.Id == id);
+        public void Remove(string id) =>
+            _companies.DeleteOne(company => company.Id == id);
     }
 }

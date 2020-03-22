@@ -19,5 +19,6 @@ namespace MossApi.Models
         [JsonProperty("Name")]
         [Required]
         public string CompanyName { get; set; }
+        public string Code { get; set; }
     }
 }

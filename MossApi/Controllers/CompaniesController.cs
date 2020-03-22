@@ -50,7 +50,8 @@ namespace MossApi.Controllers
         ///     POST /Companies
         ///     {
         ///        "id": 1,
-        ///        "name": "Company1"
+        ///        "name": "Company1",
+        ///        "code" : "Code1"
         ///     }
         ///
         /// </remarks>

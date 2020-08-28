@@ -102,5 +102,17 @@ namespace MossApi.Controllers
 
             return NoContent();
         }
+
+        /// <summary>
+        /// Gets a specific Company.
+        /// </summary>
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult<bool> Load()
+        {
+            _companyService.Load();
+
+            return Ok();
+        }
     }
 }
